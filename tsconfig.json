@@ -16,6 +16,8 @@
         "forceConsistentCasingInFileNames": true,
         "importHelpers": true,
         "moduleResolution": "node",
+        "outDir": "dist",
+        "sourceMap": true
     },
     "include": [
         "src",
