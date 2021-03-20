@@ -8,9 +8,7 @@ export class UserRepository {
 
     constructor() {
         mongoClient('users')
-        .then(
-            collection => this._collection = collection,
-        );
+        .then(collection => this._collection = collection);
     }
 
     async getByNickname(nickname: string) {
@@ -34,6 +32,14 @@ export class UserRepository {
 
     async delete(nickname: string) {
         return this._collection.deleteOne({ nickname });
+    }
+
+    async updateBalance(nickname: string, value: number) {
+        return this._collection.updateOne({ nickname }, {
+            $set: {
+                balance: value
+            }
+        })
     }
 
 }

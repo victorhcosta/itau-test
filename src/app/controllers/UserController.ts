@@ -1,4 +1,4 @@
-import { Request, response, Response } from 'express';
+import { Request, Response } from 'express';
 
 import { UserService } from "../services/UserService";
 
@@ -20,7 +20,7 @@ export class UserController {
     async getAll(_request: Request, response: Response) {
         return userService
             .getAll()
-            .then(users => response.json({ users }))
+            .then(users => response.json(users))
             .catch(error => response.status(400).json({ message: error.message }));
     }
 
