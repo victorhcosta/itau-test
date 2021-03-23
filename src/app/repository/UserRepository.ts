@@ -17,8 +17,12 @@ export class UserRepository {
         });
     }
 
-    async getAll() {
-        return this._collection.find<IUser>({}, {
+    async getAll(nickname = '') {
+        return this._collection.find<IUser>({
+            nickname: {
+                $not: new RegExp(nickname)
+            }
+        }, {
             projection: {
                 password_hash: false,
                 balance: false,

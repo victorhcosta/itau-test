@@ -69,8 +69,8 @@ export class UserService {
         return Promise.resolve(token)
     }
 
-    async getAll() {
-        return userRepository.getAll()
+    async getAll(nickname?: string) {
+        return userRepository.getAll(nickname);
     }
 
     async create(user: IUserCreateRequest) {

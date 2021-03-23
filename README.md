@@ -15,3 +15,4 @@ Opções para LOG_MODE:
 Observações:
 - O NPM vem por padrão ao instalar o Node.
 - Para ambiente de desenvolvimento utilizar a porta 3030, a porta fica como variavél de ambiente para que possa rodar de forma pratica e simples em servidores externos.
+- O Mongo está configurado para usar o MongoDB Atlas, então não é preciso ter o mesmo instalado para rodar o projeto.

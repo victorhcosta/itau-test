@@ -17,9 +17,9 @@ export class UserController {
             .catch(error => response.status(400).json(error.message ? error : { message: error }));
     }
 
-    async getAll(_request: Request, response: Response) {
+    async getAll(request: Request, response: Response) {
         return userService
-            .getAll()
+            .getAll(request.loggedUser?.nickname)
             .then(users => response.json(users))
             .catch(error => response.status(400).json({ message: error.message }));
     }
